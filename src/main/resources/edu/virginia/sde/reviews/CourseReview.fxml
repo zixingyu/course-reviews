@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/21.0.5" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.virginia.sde.reviews.frontend.ReviewsController">
+   <children>
+      <HBox prefHeight="59.0" prefWidth="900.0">
+         <children>
+            <Button fx:id="BackButton" mnemonicParsing="false" onAction="#navigateBack" text="Back" textAlignment="CENTER">
+               <font>
+                  <Font name="Avenir Next Medium" size="15.0" />
+               </font>
+               <HBox.margin>
+                  <Insets bottom="10.0" left="20.0" right="280.0" top="15.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="AddCourseButton" mnemonicParsing="false" style="-fx-background-color: DbDbDb;" onAction="#navigateToAddCourse" text="Add Course" textAlignment="CENTER">
+               <font>
+                  <Font name="Avenir Roman" size="15.0" />
+               </font>
+               <HBox.margin>
+                  <Insets bottom="10.0" left="200.0" right="10.0" top="15.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="MyReviewsButton" mnemonicParsing="false" style="-fx-background-color: DbDbDb;" onAction="#navigateToMyReviews" text="My Reviews" textAlignment="CENTER">
+               <font>
+                  <Font name="Avenir Roman" size="15.0" />
+               </font>
+               <HBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="15.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="LogoutButton" mnemonicParsing="false" style="-fx-background-color: DbDbDb;" onAction="#navigateToLogin" text="Log Out" textAlignment="CENTER">
+               <HBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="15.0" />
+               </HBox.margin>
+               <font>
+                  <Font name="Avenir Roman" size="15.0" />
+               </font>
+            </Button>
+         </children>
+         <VBox.margin>
+            <Insets left="10.0" right="10.0" />
+         </VBox.margin>
+      </HBox>
+      <HBox prefHeight="550.0" prefWidth="900.0">
+         <children>
+            <VBox prefHeight="532.0" prefWidth="496.0">
+               <children>
+                  <Label fx:id="CourseTitleLabel" text="Course Title" textAlignment="CENTER">
+                     <font>
+                        <Font name="Avenir Next Demi Bold" size="24.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="20.0" right="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label fx:id="AverageRatingLabel" text="Average Rating">
+                     <VBox.margin>
+                        <Insets left="20.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font name="Avenir Oblique" size="18.0" />
+                     </font>
+                  </Label>
+                  <ScrollPane fx:id="AverageRatingScrollPane" prefHeight="445.0" prefWidth="476.0">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="443.0" prefWidth="479.0">
+                           <children>
+                              <ListView fx:id="reviewsListView"  layoutX="-13.0" prefHeight="442.0" prefWidth="485.0">
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                              </ListView>
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </AnchorPane>
+                     </content>
+                     <VBox.margin>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="15.0" />
+                     </VBox.margin>
+                  </ScrollPane>
+               </children>
+               <HBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" />
+               </HBox.margin>
+            </VBox>
+            <VBox prefHeight="522.0" prefWidth="389.0">
+               <children>
+                  <Label fx:id="YourRatingLabel" text="Your Rating">
+                     <font>
+                        <Font name="Avenir Next Demi Bold" size="18.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <TextArea fx:id="RatingTextArea" prefHeight="19.0" prefWidth="190.0">
+                     <VBox.margin>
+                        <Insets left="10.0" right="20.0" />
+                     </VBox.margin>
+                  </TextArea>
+                  <Label fx:id="ValidRatingLabel"  textAlignment="CENTER" textFill="#ffa228">
+                     <font>
+                        <Font name="Avenir Oblique" size="11.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="10.0" top="5.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label fx:id="YourReviewLabel" text="Your Review">
+                     <font>
+                        <Font name="Avenir Next Demi Bold" size="18.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="15.0" top="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <TextArea fx:id="ReviewContentField" prefHeight="289.0" prefWidth="357.0">
+                     <VBox.margin>
+                        <Insets left="10.0" right="15.0" />
+                     </VBox.margin>
+                  </TextArea>
+                  <HBox prefHeight="14.0" prefWidth="214.0">
+                     <opaqueInsets>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </opaqueInsets>
+                     <children>
+                        <Button fx:id="SubmitButton" mnemonicParsing="false" onAction="#submitReview" prefHeight="33.0" prefWidth="82.0" text="Submit" textFill="#ed9d37">
+                           <HBox.margin>
+                              <Insets bottom="10.0" left="60.0" right="30.0" top="10.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="Avenir Roman" size="15.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="DeleteButton" mnemonicParsing="false" onAction="#deleteReview" prefHeight="27.0" prefWidth="75.0" text="Delete" textFill="#1637dd">
+                           <font>
+                              <Font name="Avenir Roman" size="15.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets bottom="10.0" left="50.0" right="10.0" top="10.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </HBox>
+               </children>
+               <opaqueInsets>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </opaqueInsets>
+               <HBox.margin>
+                  <Insets bottom="10.0" right="10.0" top="10.0" />
+               </HBox.margin>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</VBox>
